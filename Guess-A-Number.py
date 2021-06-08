@@ -45,9 +45,45 @@ while catch_loop:
         print(only_numbers_are_allowed())
 
 
-def random_numbers(input):
+catch_loop = True
+while catch_loop:
+    try:
+        print(f"""
+|=========================================================|
+| 1. Beginner         2. Intermediate         3. Advanced |
+| 4. Expert           5. Pro                  6. Pro++    |
+|_________________________________________________________|
+            """)
+        difficulty = int(
+            input("What difficulty level would you like to play? "))
+        catch_loop = False
+    except ValueError:
+        print(only_numbers_are_allowed())
+
+
+if difficulty == 1:
+    difficulty_name = "Beginner"
+    maximum_number = 10
+elif difficulty == 2:
+    difficulty_name = "Intermediate"
+    maximum_number = 25
+elif difficulty == 3:
+    difficulty_name = "Advanced"
+    maximum_number = 40
+elif difficulty == 4:
+    difficulty_name = "Expert"
+    maximum_number = 80
+elif difficulty == 5:
+    difficulty_name = "Pro"
+    maximum_number = 100
+elif difficulty == 6:
+    difficulty_name = "Pro++"
+    maximum_number = 1000
+
+
+def random_numbers(input, maximum):
     for number in range(0, input):
-        random_secret_numbers.append(randint(1, 10))
+        random_secret_numbers.append(randint(1, maximum))
     return random_secret_numbers
 
 
@@ -63,8 +99,8 @@ def calc_high_score(input, tries):
     return score
 
 
-random_numbers(round_limit_choice)
-message = f"Guess a number between 1 and {number}"
+random_numbers(round_limit_choice, maximum_number)
+message = f"Guess a number between 1 and {maximum_number}"
 # Applications loop
 while command != "0":
     if command == "1":
@@ -81,7 +117,7 @@ while command != "0":
     # Game loop
     while round_count < round_limit_choice:
         print(message)
-        print(random_secret_numbers)
+        # print(random_secret_numbers)
         catch_loop = True
         while catch_loop:
             try:
@@ -116,7 +152,11 @@ while command != "0":
 
     high_score = f"""
 
+********************************************************************
+*******                    YOUR HIGH SCORE                   *******
+********************************************************************
 {player_name}:
+Difficulty: {difficulty_name}
 Date: {current_day()}    Time: {current_time()}
 Incorrect Guesses: {wrong_guesses}    Correct Guesses: {round_count}
 Total Score: {calc_high_score(round_count, wrong_guesses)}%
