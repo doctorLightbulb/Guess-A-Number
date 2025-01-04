@@ -1,0 +1,38 @@
+{
+    "correct_guess": [
+        "You guessed right",
+        "Wonderful! You guessed it",
+        "Stupendous work",
+        "Great job! Keep going"
+    ],
+    "incorrect_guessed": [
+        "No, give it another try",
+        "Sorry, try again",
+        "Not quite. Try again",
+        "Once more, please"
+    ],
+    "numbers_only": [
+        "Sorry, only numbers are allowed",
+        "Maybe in the future letters will equate to numbers, but currently, I'm afraid only numbers are recognized",
+        "That is not a number",
+        "?"
+    ],
+    "already_picked": [
+        "You already picked that number",
+        "That number is so worn out! Try another one",
+        "It appears that you already guessed that number. Please try a different number",
+        "Hmm... try a number other than %s"
+    ],
+    "player_lost": [
+        "Sorry, you lost",
+        "We are so sorry, but you appear to have lost",
+        "It is with deep regret we inform you that you have lost the game",
+        "Hmm... you lost. We are sorry"
+    ],
+    "player_won": [
+        "Congratulations! You win",
+        "A big round of applause! You've won",
+        "With great joy, we proudly name you the winner of the game",
+        "You have won! Stupendous work"
+    ]
+}
